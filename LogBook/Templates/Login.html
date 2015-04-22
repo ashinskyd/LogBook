@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <p>Enter your credential below</p>
+    <ul id="navigation">
+        {% if error %}
+    <p> Sorry, there was an error logging you in. Try Again</p>
+        {% endif %}
+    </ul>
+   
+    <form method=post action="login" >
+        <table>
+            <tr>
+                <td> <input type="text" name="username" /> Username</td>
+            </tr>
+            <tr>
+                <td> <input type="password" name="password" /> Password</td>
+            </tr>
+            <tr>
+                <td> <input type="submit" title="submit" /> </td>
+            </tr>
+        </table>
+    </form>
+   
+</body>
+</html>
