@@ -7,13 +7,17 @@
 </head>
 <body>
     <h1>Login Page</h1>
-    <p>Enter your credential below</p>
-    <ul id="navigation">
-        {% if error %}
-    <p> Sorry, there was an error logging you in. Try Again</p>
-        {% endif %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
     </ul>
-   
+    {% endif %}
+    {% endwith %}
+    <p>Enter your credential below</p>
+  
     <form method=post action="login" >
         <table>
             <tr>
